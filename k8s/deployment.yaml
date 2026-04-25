@@ -18,9 +18,11 @@ spec:
       labels:
         app: my-app
     spec:
+      imagePullSecrets:
+      - name: harbor-secret
       containers:
       - name: my-app
-        image: 10.0.0.210/library/my-app:v1    # Jenkins가 이 태그를 자동 업데이트
+        image: 10.0.0.208/library/my-app:v1
         ports:
         - containerPort: 5000
         env:
