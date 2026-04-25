@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app-green
+  namespace: my-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: my-app
+      version: green
+  template:
+    metadata:
+      labels:
+        app: my-app
+        version: green
+    spec:
+      imagePullSecrets:
+      - name: harbor-secret
+      containers:
+      - name: my-app
+        image: 10.0.0.208/library/my-app:v2
+        ports:
+        - containerPort: 5000
