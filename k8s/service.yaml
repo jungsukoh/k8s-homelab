@@ -8,7 +8,7 @@ metadata:
 spec:
   selector:
     app: my-app
-    version: blue # <- green으로 수정하면 트래픽 전환
+    version: green # <- green으로 수정하면 트래픽 전환
   ports:
   - name: http          # ServiceMonitor 연동 시 name 필드 필수
     port: 80
