@@ -7,9 +7,8 @@ metadata:
     app: my-app
 spec:
   selector:
-    app: my-app
-    version: green # <- green으로 수정하면 트래픽 전환
+    app: my-app     # version selector 없음 → stable + canary 둘 다 트래픽 받음
   ports:
-  - name: http          # ServiceMonitor 연동 시 name 필드 필수
+  - name: http
     port: 80
     targetPort: 5000
