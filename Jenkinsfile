@@ -9,6 +9,18 @@ pipeline {
     }
 
     stages {
+        stage('Check Commit') {
+            steps {
+                script {
+                    def commitMsg = sh(script: 'git log -1 --pretty=%B', returnStdout: true).trim()
+                    if (commitMsg.contains('[skip ci]')) {
+                        currentBuild.result = 'NOT_BUILT'
+                        error('Skipping CI - commit message contains [skip ci]')
+                    }
+                }
+            }
+        }
+        
         stage('Checkout') {
             steps {
                 git branch: 'main',
