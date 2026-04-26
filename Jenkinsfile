@@ -82,7 +82,7 @@ pipeline {
     post {
         success {
             slackSend(
-                channel: '#k8s-alerts',
+                channel: 'C0AV56LHP27',
                 color: 'good',
                 message: """? *배포 성공*
 Job: ${env.JOB_NAME} | Build: #${env.BUILD_NUMBER}
