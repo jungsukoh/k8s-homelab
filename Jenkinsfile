@@ -91,7 +91,7 @@ Image: ${env.IMAGE_TAG} | Duration: ${currentBuild.durationString}"""
         }
         failure {
             slackSend(
-                channel: '#k8s-alerts',
+                channel: 'C0AV56LHP27',
                 color: 'danger',
                 message: """? *배포 실패*
 Job: ${env.JOB_NAME} | Build: #${env.BUILD_NUMBER}
