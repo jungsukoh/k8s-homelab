@@ -1,13 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-app-stable
+  name: my-app
   namespace: my-app
 spec:
-  replicas: 4
+  replicas: 2
   selector:
     matchLabels:
       app: my-app
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
   template:
     metadata:
       labels:

@@ -7,7 +7,7 @@ metadata:
     app: my-app
 spec:
   selector:
-    app: my-app     # version selector 없음 → stable + canary 둘 다 트래픽 받음
+    app: my-app
   ports:
   - name: http
     port: 80
