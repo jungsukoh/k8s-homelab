@@ -5,6 +5,7 @@ pipeline {
         HARBOR_URL = '10.0.0.208'
         IMAGE_NAME = 'library/my-app'
         IMAGE_TAG  = "v${BUILD_NUMBER}"
+        PATH       = "/var/jenkins_home:${env.PATH}"    // ¡ç Ãß°¡
     }
 
     stages {
