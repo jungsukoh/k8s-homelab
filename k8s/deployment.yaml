@@ -22,7 +22,7 @@ spec:
       - name: harbor-secret
       containers:
       - name: my-app
-        image: 10.0.0.208/library/my-app:v19
+        image: 10.0.0.208/library/my-app:v20
         ports:
         - containerPort: 5000
         env:
