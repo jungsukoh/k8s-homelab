@@ -14,6 +14,7 @@ def hello():
     REQUEST_COUNT.labels(method='GET', endpoint='/', status='200').inc()
     REQUEST_LATENCY.labels(endpoint='/').observe(time.time() - start)
     return f"Hello from {VERSION}! - Auto CI/CD Test\n"
+    
 
 @app.route('/health')
 def health():
